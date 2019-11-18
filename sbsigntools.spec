@@ -8,7 +8,7 @@ License:        GPLv2+
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
 Source0:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.xz
 Patch0:		sbsigntools-no-git.patch
-
+BuildRequires:	binutils-devel
 %description
 Tools for signing secure-boot efi binaries.
 %prep
@@ -36,5 +36,5 @@ NOCONFIGURE=1 ./autogen.sh
 %{_mandir}/man1/sbsign.1.*
 %{_mandir}/man1/sbvarsign.1.*
 %{_mandir}/man1/sbverify.1.*
-#%%{_sbindir}/*
+
 
