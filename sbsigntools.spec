@@ -12,6 +12,7 @@ BuildRequires:	binutils-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	gnu-efi
+BuildRequires:	help2man
 
 %description
 Tools for signing secure-boot efi binaries
