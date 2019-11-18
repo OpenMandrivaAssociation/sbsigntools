@@ -9,6 +9,7 @@ URL:            https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools
 Source0:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.xz
 Patch0:		sbsigntools-no-git.patch
 BuildRequires:	binutils-devel
+BuildRequires:	openssl-devel
 %description
 Tools for signing secure-boot efi binaries.
 %prep
