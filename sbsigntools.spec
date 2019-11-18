@@ -10,6 +10,7 @@ Source0:        https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools
 Patch0:		sbsigntools-no-git.patch
 BuildRequires:	binutils-devel
 BuildRequires:	openssl-devel
+BuildRequires:	uuid-devel
 %description
 Tools for signing secure-boot efi binaries.
 %prep
