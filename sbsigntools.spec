@@ -1,15 +1,15 @@
 #define gitver 20191108
 Name:		sbsigntools
-Version:	0.9.2
+Version:	0.9.4
 Release:	1
 Summary:	Tool for signing secure-boot efi binaries
 Group:		System
 License:	GPLv2+
 URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
-Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.xz
+Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.gz
 Patch0:		sbsigntools-no-git.patch
 BuildRequires:	binutils-devel
-BuildRequires:	openssl-devel
+BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	gnu-efi
 BuildRequires:	help2man
