@@ -10,7 +10,6 @@ URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.gz
 Source0:	sbsigntools-%{version}.tar.xz
 Patch0:		sbsigntools-no-git.patch
-Patch1:		sbsigntools-gnuefi.patch
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(uuid)
