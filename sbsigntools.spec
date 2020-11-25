@@ -7,12 +7,13 @@ Group:		System
 License:	GPLv2+
 URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
 Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.gz
-Patch0:		sbsigntools-no-git.patch
+#Patch0:		sbsigntools-no-git.patch
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:	gnu-efi
 BuildRequires:	help2man
+BuildRequires:	git
 
 %description
 Tools for signing secure-boot efi binaries.
