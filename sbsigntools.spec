@@ -25,7 +25,7 @@ Tools for signing secure-boot efi binaries.
 %build
 NOCONFIGURE=1 ./autogen.sh
 %configure
-%make_build
+%make_build "CFLAGS=$CFLAGS -Wno-error"
 
 %install
 %make_install
@@ -38,3 +38,4 @@ NOCONFIGURE=1 ./autogen.sh
 %{_mandir}/man1/sbsign.1.*
 %{_mandir}/man1/sbvarsign.1.*
 %{_mandir}/man1/sbverify.1.*
+%{_mandir}/man1/sbkeysync.1.*
