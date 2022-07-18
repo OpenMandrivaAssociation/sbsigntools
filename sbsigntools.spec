@@ -1,7 +1,7 @@
 #define gitver 20191108
 Name:		sbsigntools
 Version:	0.9.4
-Release:	1
+Release:	2
 Summary:	Tool for signing secure-boot efi binaries
 Group:		System
 License:	GPLv2+
@@ -9,7 +9,14 @@ URL:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git
 # (tpg) this source is broken, please use sbsigntools-mktarball.sh
 #Source0:	https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/snapshot/sbsigntools-%{version}.tar.gz
 Source0:	sbsigntools-%{version}.tar.xz
-Patch0:		sbsigntools-no-git.patch
+# don't fetch ccan or run git from autogen.sh, already done by mktarball.sh
+Patch0:		%{name}-no-git.patch
+# add Fedora gnu-efi path and link statically against libefi.a/libgnuefi.a
+# do not enable this Patch1:		%{name}-gnuefi.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=1955828
+Patch2:		https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/patch/?id=f12484869c9590682ac3253d583bf59b890bb826#/f12484869c9590682ac3253d583bf59b890bb826.patch
+# https://groups.io/g/sbsigntools/message/54
+Patch3:		%{name}-openssl3.patch
 BuildRequires:	binutils-devel
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(uuid)
@@ -33,9 +40,4 @@ NOCONFIGURE=1 ./autogen.sh
 %files
 %doc COPYING README
 %{_bindir}/*
-%{_mandir}/man1/sbattach.1.*
-%{_mandir}/man1/sbsiglist.1.*
-%{_mandir}/man1/sbsign.1.*
-%{_mandir}/man1/sbvarsign.1.*
-%{_mandir}/man1/sbverify.1.*
-%{_mandir}/man1/sbkeysync.1.*
+%doc %{_mandir}/man1/*.1.*
