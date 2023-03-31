@@ -1,7 +1,7 @@
 #define gitver 20191108
 Name:		sbsigntools
 Version:	0.9.4
-Release:	2
+Release:	3
 Summary:	Tool for signing secure-boot efi binaries
 Group:		System
 License:	GPLv2+
